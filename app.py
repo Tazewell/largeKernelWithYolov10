@@ -7,7 +7,7 @@ from ultralytics import YOLOv10
 def yolov10_inference(image, video, model_id, image_size, conf_threshold):
     # 检查是否使用自定义训练的模型
     if model_id == "LK_YOLOv10_trained":
-        model = YOLOv10('runs/neo/weights/best.pt')
+        model = YOLOv10('runs/01/weights/best.pt')
     else:
         model = YOLOv10.from_pretrained(f'jameslahm/{model_id}')
     if image:
