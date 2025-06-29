@@ -5,12 +5,12 @@ task: detect # (str) YOLO task, i.e. detect, segment, classify, pose
 mode: train # (str) YOLO mode, i.e. train, val, predict, export, track, benchmark
 
 # Train settings -------------------------------------------------------------------------------------------------------
-model: # 这条不用填，我们之前设定好了 # (str, optional) path to model file, i.e. yolov8n.pt, yolov8n.yaml
-data: # 这条也不用填，我们之前也定好了 # (str, optional) path to data file, i.e. coco128.yaml
-epochs: 300 # 每个跑300轮，大概在200轮就训练好了 # (int) number of epochs to train for
+model: # (str, optional) path to model file, i.e. yolov8n.pt, yolov8n.yaml
+data:  # (str, optional) path to data file, i.e. coco128.yaml
+epochs: 300  # (int) number of epochs to train for
 time: # (float, optional) number of hours to train for, overrides epochs if supplied
-patience: 100 # 早停不用变 # (int) epochs to wait for no observable improvement for early stopping of training
-batch: -1 # -1用来设置自动批次大小 # (int) number of images per batch (-1 for AutoBatch)
+patience: 100  # (int) epochs to wait for no observable improvement for early stopping of training
+batch: -1 ## (int) number of images per batch (-1 for AutoBatch)
 imgsz: 640 # 不用变 # (int | list) input images size as int for train and val modes, or list[w,h] for predict and export modes
 save: True # (bool) save train checkpoints and predict results
 save_period: -1 # (int) Save checkpoint every x epochs (disabled if < 1)
@@ -22,7 +22,7 @@ project: LK_YOLOv10 # 这个地方的名字务必要改，避免跑完分不清�
 name: exp # (str, optional) experiment name, results saved to 'project/name' directory
 exist_ok: False # (bool) whether to overwrite existing experiment
 pretrained: True # (bool | str) whether to use a pretrained model (bool) or a model to load weights from (str)
-optimizer: AdamW # 用AdamW效果会好很多，YOLOv9真sb，这玩意用不了。 # (str) optimizer to use, choices=[SGD, Adam, Adamax, AdamW, NAdam, RAdam, RMSProp, auto]
+optimizer: AdamW #  # (str) optimizer to use, choices=[SGD, Adam, Adamax, AdamW, NAdam, RAdam, RMSProp, auto]
 verbose: True # (bool) whether to print verbose output
 seed: 0 # (int) random seed for reproducibility
 deterministic: True # (bool) whether to enable deterministic mode
